@@ -1,6 +1,9 @@
 .body {
-    background-size: 100%;
+    background-size: cover;
     background-color: rgb(201, 238, 238);
+    background-repeat: no-repeat;
+    background-attachment: fixed ;
+    background-position: center center;
    
 }
 
@@ -10,4 +13,5 @@
     border-radius: 50%;
    
 }
+
 
