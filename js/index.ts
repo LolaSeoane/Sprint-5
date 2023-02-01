@@ -25,8 +25,8 @@ if (navigator.geolocation) {
 const reportJokes: any = []
 
 function nextJoke() {
-    const API_URL2 = 'https://api.chucknorris.io/jokes/random'
     const API_URL1 = 'https://icanhazdadjoke.com'
+    const API_URL2 = 'https://api.chucknorris.io/jokes/random'
     const header = { headers: { Accept: "application/json" } }
     const scoreButton = document.getElementById(
         "scoreButtons"
