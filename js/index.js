@@ -12,22 +12,34 @@ if (navigator.geolocation) {
             const weatherDescription = weather[0].description;
             console.log(data);
             console.log(weatherDescription);
-            document.getElementById('textWeather').innerHTML = weatherDescription;
+            document.getElementById('textWeather').innerHTML = `Today: ${weatherDescription}`;
         });
     });
 }
 const reportJokes = [];
 function nextJoke() {
-    const API_URL = 'https://icanhazdadjoke.com';
+    const API_URL2 = 'https://api.chucknorris.io/jokes/random';
+    const API_URL1 = 'https://icanhazdadjoke.com';
     const header = { headers: { Accept: "application/json" } };
     const scoreButton = document.getElementById("scoreButtons");
     scoreButton.style.display = "";
-    fetch(API_URL, header).then((response) => response.json()).then((data) => {
-        const joke = data.joke;
-        console.log(joke);
-        document.getElementById('result').innerHTML = joke;
-        return joke;
-    });
+    let randomNumber = Math.round(Math.random());
+    if (randomNumber === 0) {
+        fetch(API_URL1, header).then((response) => response.json()).then((data) => {
+            const joke = data.joke;
+            console.log(joke);
+            document.getElementById('result').innerHTML = joke;
+            return joke;
+        });
+    }
+    else {
+        fetch(API_URL2).then((response) => response.json()).then((data) => {
+            const joke2 = data.value;
+            console.log(joke2);
+            document.getElementById('result').innerHTML = joke2;
+            return joke2;
+        });
+    }
 }
 function getPoints(id) {
     var _a;
